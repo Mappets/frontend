@@ -6,15 +6,12 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
-import VueToast from 'vue-toast-notification';
-import 'vue-toast-notification/dist/index.css';
-
-Vue.use(Loading);
-Vue.use(VueToast);
-Vue.component('loading', Loading);
+Vue.use(Loading)
+Vue.component('loading', Loading)
 
 export default {
   name: 'App',

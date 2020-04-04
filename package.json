@@ -19,7 +19,6 @@
     "vue-loading-overlay": "^3.3.2",
     "vue-router": "^3.0.1",
     "vue-sidebar-menu": "^4.5.3",
-    "vue-toast-notification": "^0.2.0",
     "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {

@@ -20,24 +20,24 @@ export default {
   props: [
     //
   ],
-  data() {
+  data () {
     return {
       isLoading: false,
       fullPage: true,
       loader: "dots",
       color: "#007bff",
-    };
+    }
   },
   methods: {
-    update() {
+    update () {
       //
-    },
+    }
   },
-  mounted() {
+  mounted () {
     //
   },
-  created() {
+  created () {
     //
-  },
-};
+  }
+}
 </script>

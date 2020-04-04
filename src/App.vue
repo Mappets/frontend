@@ -1,22 +1,29 @@
 <template>
   <div id="app">
-    <router-view />
+    <header-component />
+    <sidebar-component />
+    <footer-component />
+    <div class="main">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import Loading from 'vue-loading-overlay'
-import 'vue-loading-overlay/dist/vue-loading.css'
+import Vue from "vue";
 
-Vue.use(Loading)
-Vue.component('loading', Loading)
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Sidebar from "./components/layout/Sidebar";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-  }
-}
+    "header-component": Header,
+    "footer-component": Footer,
+    "sidebar-component": Sidebar,
+  },
+};
 </script>
 
 <style>

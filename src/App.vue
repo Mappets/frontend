@@ -1,27 +1,19 @@
 <template>
   <div id="app">
-    <Sidebar/>
-    <router-view/>
+    <Sidebar />
+    <router-view />
   </div>
 </template>
 
 <script>
-
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
-import VueToast from 'vue-toast-notification';
-import 'vue-toast-notification/dist/index.css';
-
-Vue.use(Loading);
-Vue.use(VueToast);
-Vue.component('loading', Loading);
+import Sidebar from "./components/Sidebar";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
+    Sidebar
   }
-
-}
+};
 </script>
 
 <style>

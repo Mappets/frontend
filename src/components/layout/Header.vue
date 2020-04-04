@@ -18,23 +18,23 @@ export default {
   props: [
     //
   ],
-  data() {
+  data () {
     return {
       //
-    };
+    }
   },
   methods: {
-    update() {
+    update () {
       //
-    },
+    }
   },
-  mounted() {
+  mounted () {
     //
   },
-  created() {
+  created () {
     //
-  },
-};
+  }
+}
 </script>
 
 <style scoped></style>

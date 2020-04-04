@@ -9,16 +9,16 @@ export default {
   props: [
     //
   ],
-  data() {
+  data () {
     return {
       //
-    };
+    }
   },
-  mounted() {
+  mounted () {
     // console.log("Component mounted.");
   },
-  created() {
+  created () {
     // console.log("Component created.");
-  },
-};
+  }
+}
 </script>

@@ -10,20 +10,18 @@
 </template>
 
 <script>
-import Vue from "vue";
-
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-import Sidebar from "./components/layout/Sidebar";
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
+import Sidebar from './components/layout/Sidebar'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    "header-component": Header,
-    "footer-component": Footer,
-    "sidebar-component": Sidebar,
-  },
-};
+    'header-component': Header,
+    'footer-component': Footer,
+    'sidebar-component': Sidebar
+  }
+}
 </script>
 
 <style>

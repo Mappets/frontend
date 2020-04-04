@@ -2,11 +2,10 @@
   <div id="app">
     <header-component />
     <sidebar-component />
-    <footer-component />
     <div class="main">
       <router-view />
     </div>
-    <teste />
+    <footer-component />
   </div>
 </template>
 
@@ -14,6 +13,7 @@
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Sidebar from './components/layout/Sidebar'
+
 export default {
   name: 'App',
   components: {

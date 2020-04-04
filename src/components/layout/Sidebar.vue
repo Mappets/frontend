@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
-      <router-link to="/">Dashboard</router-link>
-      <router-link to="/">Organizations</router-link>
+      <router-link to="/"> <font-awesome-icon icon="user-secret" />Dashboard</router-link>
+      <router-link to="/"> <font-awesome-icon-brand icon="building" />Organizations</router-link>
       <router-link to="/">Pets</router-link>
       <router-link to="/">Users</router-link>
   </div>
@@ -31,6 +31,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 10%;
+  background: #42B983;
 }
 .sidebar a {
   padding: 20px;

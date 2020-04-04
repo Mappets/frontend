@@ -14,7 +14,10 @@ export default {
   ],
   data () {
     return {
-      githubData: null
+      githubData: {
+        login: false,
+        id: false
+      }
     }
   },
   methods: {

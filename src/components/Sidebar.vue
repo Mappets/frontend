@@ -1,6 +1,4 @@
-<template>
-  <div>a</div>
-</template>
+<template></template>
 
 <script>
 import Vue from "vue";

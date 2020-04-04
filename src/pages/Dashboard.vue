@@ -1,15 +1,12 @@
 <template>
   <div>
-    <h1>Teste</h1>
+    <h1>Mappets</h1>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
-
 </style>

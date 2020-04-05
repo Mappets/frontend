@@ -4,17 +4,17 @@
       <template slot="links">
         <sidebar-item
           :link="{
-            name: 'Dashboard',
+            name: $t('sidebar.dashboard'),
             icon: 'ni ni-tv-2 text-green',
             path: '/dashboard'
           }"
         />
 
         <sidebar-item
-          :link="{name: 'Organizations', icon: 'ni ni-building text-green', path: '/organizations'}"
+          :link="{name: $t('sidebar.organizations') , icon: 'ni ni-building text-green', path: '/organizations'}"
         />
-        <sidebar-item :link="{name: 'Pets', icon: 'ni ni-planet text-green', path: '/pets'}" />
-        <sidebar-item :link="{name: 'Users', icon: 'ni ni-single-02 text-green', path: '/users'}" />
+        <sidebar-item :link="{name: $t('sidebar.pets'), icon: 'ni ni-planet text-green', path: '/pets'}" />
+        <sidebar-item :link="{name: $t('sidebar.users'), icon: 'ni ni-single-02 text-green', path: '/users'}" />
       </template>
     </side-bar>
     <div class="main-content" :data="sidebarBackground">

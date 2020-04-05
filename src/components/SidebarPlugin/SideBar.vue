@@ -93,22 +93,22 @@
         <!--Divider-->
         <hr class="my-3" />
         <!--Heading-->
-        <h6 class="navbar-heading text-muted">More</h6>
+        <h6 class="navbar-heading text-muted">{{ $t('sidebar.more') }}</h6>
         <!--Navigation-->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="ni ni-spaceship"></i> How it works
+              <i class="ni ni-spaceship"></i> {{ $t('sidebar.howItWorks') }}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="ni ni-settings"></i> Preferences
+              <i class="ni ni-settings"></i> {{ $t('sidebar.preferences') }}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="ni ni-curved-next"></i> Share
+              <i class="ni ni-curved-next"></i> {{ $t('sidebar.share') }}
             </a>
           </li>
         </ul>

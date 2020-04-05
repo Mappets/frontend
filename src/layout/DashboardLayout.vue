@@ -1,27 +1,20 @@
 <template>
   <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
-    <side-bar
-      :background-color="sidebarBackground"
-      short-title="Argon"
-      title="Argon"
-    >
+    <side-bar :background-color="sidebarBackground" short-title="Argon" title="Argon">
       <template slot="links">
         <sidebar-item
           :link="{
             name: 'Dashboard',
-            icon: 'ni ni-tv-2 text-primary',
+            icon: 'ni ni-tv-2 text-green',
             path: '/dashboard'
           }"
         />
 
-        <sidebar-item :link="{name: 'Icons', icon: 'ni ni-planet text-blue', path: '/icons'}"/>
-        <sidebar-item :link="{name: 'Blank', icon: 'ni ni-align-left-2', path: '/blank'}"/>
-        <sidebar-item :link="{name: 'Maps', icon: 'ni ni-pin-3 text-orange', path: '/maps'}"/>
-        <sidebar-item :link="{name: 'User Profile', icon: 'ni ni-single-02 text-yellow', path: '/profile'}"/>
-        <sidebar-item :link="{name: 'Tables', icon: 'ni ni-bullet-list-67 text-red', path: '/tables'}"/>
-        <sidebar-item :link="{name: 'Login', icon: 'ni ni-key-25 text-info', path: '/login'}"/>
-        <sidebar-item :link="{name: 'Register', icon: 'ni ni-circle-08 text-pink', path: '/register'}"/>
-
+        <sidebar-item
+          :link="{name: 'Organizations', icon: 'ni ni-building text-green', path: '/organizations'}"
+        />
+        <sidebar-item :link="{name: 'Pets', icon: 'ni ni-planet text-green', path: '/pets'}" />
+        <sidebar-item :link="{name: 'Users', icon: 'ni ni-single-02 text-green', path: '/users'}" />
       </template>
     </side-bar>
     <div class="main-content" :data="sidebarBackground">
@@ -37,30 +30,32 @@
     </div>
   </div>
 </template>
-<script>
-  import DashboardNavbar from './DashboardNavbar.vue';
-  import ContentFooter from './ContentFooter.vue';
-  import { FadeTransition } from 'vue2-transitions';
 
-  export default {
-    components: {
-      DashboardNavbar,
-      ContentFooter,
-      FadeTransition
-    },
-    data() {
-      return {
-        sidebarBackground: 'vue' //vue|blue|orange|green|red|primary
-      };
-    },
-    methods: {
-      toggleSidebar() {
-        if (this.$sidebar.showSidebar) {
-          this.$sidebar.displaySidebar(false);
-        }
+<script>
+import DashboardNavbar from "./DashboardNavbar.vue";
+import ContentFooter from "./ContentFooter.vue";
+import { FadeTransition } from "vue2-transitions";
+
+export default {
+  components: {
+    DashboardNavbar,
+    ContentFooter,
+    FadeTransition
+  },
+  data() {
+    return {
+      sidebarBackground: "vue" //vue|blue|orange|green|red|primary
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      if (this.$sidebar.showSidebar) {
+        this.$sidebar.displaySidebar(false);
       }
     }
-  };
+  }
+};
 </script>
+
 <style lang="scss">
 </style>

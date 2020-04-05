@@ -26,6 +26,21 @@ export default new Router({
           component: () => import(/* webpackChunkName: "demo" */ './views/Blank.vue')
         },
         {
+          path: '/pets',
+          name: 'pets',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Pets.vue')
+        },
+        {
+          path: '/organizations',
+          name: 'organizations',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Organizations.vue')
+        },
+        {
+          path: '/users',
+          name: 'users',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Users.vue')
+        },                        
+        {
           path: '/icons',
           name: 'icons',
           component: () => import(/* webpackChunkName: "demo" */ './views/Icons.vue')

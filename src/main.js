@@ -3,8 +3,6 @@ import App from './App'
 import router from './router'
 import ArgonDashboard from '@/plugins/argon-dashboard'
 
-library.add(faUserSecret)
-
 // Add global component
 
 Vue.use(ArgonDashboard)

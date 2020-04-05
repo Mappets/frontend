@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import axios from "axios";
-import * as webservices from "../utils/webServices";
+import axios from 'axios'
+import * as webservices from '../utils/webServices'
 
 export default {
   props: [

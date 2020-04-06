@@ -1,0 +1,3 @@
+export const ORGANIZATIONS = "/organizations";
+export const USERS = "/users";
+export const PETS = "/pets";

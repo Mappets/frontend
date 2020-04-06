@@ -2,17 +2,9 @@
   <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
     <side-bar :background-color="sidebarBackground" short-title="Argon" title="Argon">
       <template slot="links">
-        <sidebar-item
-          :link="{
-            name: $t('sidebar.dashboard'),
-            icon: 'ni ni-tv-2 text-green',
-            path: '/dashboard'
-          }"
-        />
-
-        <sidebar-item
-          :link="{name: $t('sidebar.organizations') , icon: 'ni ni-building text-green', path: '/organizations'}"
-        />
+        <sidebar-item :link="{name: $t('sidebar.dashboard'), icon: 'ni ni-spaceship text-green', path: '/dashboard' }" />
+        <sidebar-item :link="{name: $t('sidebar.map'), icon: 'ni ni-pin-3 text-green', path: '/map' }" />
+        <sidebar-item :link="{name: $t('sidebar.organizations') , icon: 'ni ni-building text-green', path: '/organizations'}" />
         <sidebar-item :link="{name: $t('sidebar.pets'), icon: 'ni ni-planet text-green', path: '/pets'}" />
         <sidebar-item :link="{name: $t('sidebar.users'), icon: 'ni ni-single-02 text-green', path: '/users'}" />
       </template>

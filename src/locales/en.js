@@ -7,6 +7,7 @@ export default {
     },
     sidebar: {
         dashboard: 'Dashboard',
+        map: 'Map',
         organizations: 'Organizations',
         pets: 'Pets',
         users: 'Users',
@@ -21,5 +22,9 @@ export default {
         language: "Language",
         portuguese: "Portuguese",
         english: "English"
-    }    
+    },
+    organizations : {
+        organizations: 'Organizations',
+        myOrganizations: 'My organizations',
+    }   
 }

@@ -33,8 +33,13 @@ export default new Router({
         {
           path: '/organizations',
           name: 'organizations',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Organizations.vue')
+          component: () => import(/* webpackChunkName: "demo" */ './views/Organizations/List.vue')
         },
+        {
+          path: '/organizations/new',
+          name: 'organizations',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Organizations.vue')
+        },        
         {
           path: '/users',
           name: 'users',
@@ -56,9 +61,9 @@ export default new Router({
           component: () => import(/* webpackChunkName: "demo" */ './views/UserProfile.vue')
         },
         {
-          path: '/maps',
-          name: 'maps',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Maps.vue')
+          path: '/map',
+          name: 'map',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Map.vue')
         },
         {
           path: '/tables',

@@ -2,11 +2,12 @@ export default {
     mappets: 'Mappets',
     mappetsProject: 'Este é o projeto do Mappets',
     navbarDropdown: {
-        myProfile: "Perfil",
-        signOut: "Sair"
+        myProfile: 'Perfil',
+        signOut: 'Sair'
     },
     sidebar: {
         dashboard: 'Dashboard',
+        map: 'Mapa',
         organizations: 'Organizações',
         pets: 'Pets',
         users: 'Usuários',
@@ -16,10 +17,14 @@ export default {
         share: 'Compartilhar',
     },
     preferences: {
-        preferences: "Preferências",
-        myPreferences: "Minhas preferências",
-        language: "Idioma",
-        portuguese: "Português",
-        english: "Inglês"
+        preferences: 'Preferências',
+        myPreferences: 'Minhas preferências',
+        language: 'Idioma',
+        portuguese: 'Português',
+        english: 'Inglês'
+    },
+    organizations : {
+        organizations: 'Organizações',
+        myOrganizations: 'Minhas organizações',
     }
 }

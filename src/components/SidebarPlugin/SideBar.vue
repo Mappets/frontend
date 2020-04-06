@@ -102,9 +102,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+              <router-link class="nav-link" to="/preferences">
               <i class="ni ni-settings"></i> {{ $t('sidebar.preferences') }}
-            </a>
+              </router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">

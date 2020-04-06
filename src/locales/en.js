@@ -14,5 +14,12 @@ export default {
         howItWorks: 'How it works',
         preferences: 'Preferences',
         share: 'Share',
-    }
+    },
+    preferences: {
+        preferences: "Preferences",
+        myPreferences: "My preferences",
+        language: "Language",
+        portuguese: "Portuguese",
+        english: "English"
+    }    
 }

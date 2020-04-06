@@ -39,7 +39,12 @@ export default new Router({
           path: '/users',
           name: 'users',
           component: () => import(/* webpackChunkName: "demo" */ './views/Users.vue')
-        },                        
+        },
+        {
+          path: '/preferences',
+          name: 'preferences',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Preferences.vue')
+        },        
         {
           path: '/icons',
           name: 'icons',

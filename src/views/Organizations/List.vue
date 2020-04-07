@@ -3,7 +3,6 @@
     <loading
       :active.sync="isLoading"
       :can-cancel="false"
-      :on-cancel="onCancel"
       :is-full-page="fullPage"
       loader="bars"
       color="#41B883"
@@ -13,22 +12,15 @@
       <span class="mask bg-gradient-success opacity-8"></span>
     </base-header>
 
-    <div class="container-fluid mt--7" v-if="organizations">
+    <div v-if="organizations.length == 0">
+      <empty-component></empty-component>
+    </div>
+    <div class="container-fluid mt--7" v-else>
       <div class="row">
-        <div
-          class="col-xl-4 order-xl-1 margin-above"
-          v-for="org in organizations"
-          :key="org.id"
-        >
-          <card-list-component
-            :item="org"
-            :show-action-button="true"
-          ></card-list-component>
+        <div class="col-xl-4 order-xl-1 margin-above" v-for="org in organizations" :key="org.id">
+          <card-list-component :item="org" :show-action-button="true"></card-list-component>
         </div>
       </div>
-    </div>
-    <div v-else>
-      <empty-component></empty-component>
     </div>
   </div>
 </template>
@@ -56,18 +48,24 @@ export default {
     };
   },
   created() {
-    HTTP.get(ORGANIZATIONS)
-      .then(response => {
-        this.isLoading = false;
-        if (response.status == OK) {
-          this.organizations = response.data;
-        }
-      })
-      .catch(error => {
-        console.log(error.response);
-        console.log(error.response.status);
-        this.errors.push(error);
-      });
+    this.loadOrganizations();
+  },
+  methods: {
+    loadOrganizations() {
+      HTTP.get(ORGANIZATIONS)
+        .then(response => {
+          this.isLoading = false;
+          if (response.status == OK) {
+            this.organizations = response.data;
+          }
+        })
+        .catch(error => {
+          this.isLoading = false;
+          console.log(error.response);
+          console.log(error.response.status);
+          this.errors.push(error);
+        });
+    }
   }
 };
 </script>

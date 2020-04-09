@@ -37,7 +37,7 @@
                                 <span class="text-muted">Remember me</span>
                             </base-checkbox>
                             <div class="text-center">
-                                <base-button type="primary" class="my-4">Sign in</base-button>
+                                <base-button type="primary" @click="login()" class="my-4">Sign in</base-button>
                             </div>
                         </form>
                     </div>
@@ -63,7 +63,12 @@
           password: ''
         }
       }
-    }
+    },
+    methods: {
+      login () {
+        console.log('teste')
+      }
+    },
   }
 </script>
 <style>

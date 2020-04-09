@@ -8,7 +8,7 @@ export default new Router({
   linkExactActiveClass: 'active',
   routes: [
     {
-      path: '/',
+      path: '/darshboard',
       redirect: 'dashboard',
       component: DashboardLayout,
       children: [
@@ -39,7 +39,7 @@ export default new Router({
           path: '/organizations/new',
           name: 'organizations',
           component: () => import(/* webpackChunkName: "demo" */ './views/Organizations.vue')
-        },        
+        },
         {
           path: '/users',
           name: 'users',
@@ -49,7 +49,7 @@ export default new Router({
           path: '/preferences',
           name: 'preferences',
           component: () => import(/* webpackChunkName: "demo" */ './views/Preferences.vue')
-        },        
+        },
         {
           path: '/icons',
           name: 'icons',

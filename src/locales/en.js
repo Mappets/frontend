@@ -1,5 +1,6 @@
 export default {
   mappets: "Mappets",
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   mappetsProject: "This is the Mappets project.",
   navbarDropdown: {
     myProfile: "My profile",
@@ -31,5 +32,16 @@ export default {
     nothingToSeeHere: "Nothing to see here",
     description: "We don't found any data with this filter.",
     goToInitialPage: "Go to initial page"
-  }
+  },
+  footer: {
+    mappets: "Mappets",
+    aboutUs: "About us",
+    openSource: "Open source"
+  },
+  authLayout: {
+    register: "Register",
+    login: "Login"
+  },
+  login: {},
+  register: {}
 };

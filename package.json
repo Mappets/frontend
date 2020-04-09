@@ -24,6 +24,7 @@
     "vue-i18n": "^8.16.0",
     "vue-loading-overlay": "^3.3.2",
     "vue-router": "3.0.1",
+    "vue2-google-maps": "^0.10.7",
     "vue2-transitions": "0.3.0"
   },
   "devDependencies": {

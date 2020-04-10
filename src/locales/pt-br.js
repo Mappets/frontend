@@ -31,5 +31,15 @@ export default {
     nothingToSeeHere: "Nada por aqui",
     description: "Nós não encontramos nenhum registro com esse filtro.",
     goToInitialPage: "Ir para a página inicial"
+  },
+  login:{
+    signInWith: "Logar com",
+    welcome: "Seja Bem-Vindo",
+    slogan: "Ajudamos quem mais precisa e não pode pedir ajuda!",
+    signIn: "Acessar",
+    signWithCredentials: "Acessar com credenciais",
+    rememberMe: "Lembrar",
+    usernamePlaceholder: "Usuário",
+    passwordPlaceholder: "Senha"
   }
 };

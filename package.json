@@ -1,13 +1,15 @@
 {
-  "name": "vue-argon-dashboard",
+  "name": "mappets",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --mode=production",
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "aws s3 sync ./dist/ s3://mappets.servehttp.com --profile=mappets"
+    "inspect": "vue-cli-service inspect",
+    "help": "npx vue-cli-service help",
+    "deploy": "aws s3 sync ./dist/ s3://web.mappets.app --profile=mappets"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -33,6 +35,7 @@
     "@vue/cli-plugin-pwa": "^3.5.0",
     "@vue/cli-service": "^3.5.0",
     "babel-eslint": "^10.0.1",
+    "dotenv": "^8.2.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",

@@ -31,5 +31,15 @@ export default {
     nothingToSeeHere: "Nothing to see here",
     description: "We don't found any data with this filter.",
     goToInitialPage: "Go to initial page"
+  },
+  login:{
+    signInWith: "Sign in with",
+    welcome: "Welcome",
+    slogan: "Use these awesome forms to login or create new account in your project for free.",
+    signIn: "Sign in",
+    signWithCredentials: "Or sign in with credentials",
+    rememberMe: "Remember me",
+    usernamePlaceholder: "Usename",
+    passwordPlaceholder: "Password"
   }
 };

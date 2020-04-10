@@ -70,5 +70,9 @@ export default {
     facebook: "Facebook",
     github: "GitHub",
     google: "Google"
+  },
+  validations: {
+    required: "Este campo é obrigatório.",
+    min: "Verifique o valor mínimo necessário."
   }
 };

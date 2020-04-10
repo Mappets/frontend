@@ -21,8 +21,15 @@
     </div>
     <div class="container-fluid mt--7" v-else>
       <div class="row">
-        <div class="col-xl-4 order-xl-1 margin-above" v-for="org in organizations" :key="org.id">
-          <card-list-component :item="org" :show-action-button="true"></card-list-component>
+        <div
+          class="col-xl-4 order-xl-1 margin-above"
+          v-for="org in organizations"
+          :key="org.id"
+        >
+          <card-list-component
+            :item="org"
+            :show-action-button="true"
+          ></card-list-component>
         </div>
       </div>
     </div>
@@ -35,14 +42,10 @@ import { HTTP } from "../../services/api";
 import { ORGANIZATIONS } from "../../utils/webServices";
 import { OK } from "../../utils/httpStatusCodes";
 
-import Loading from "vue-loading-overlay";
-import "vue-loading-overlay/dist/vue-loading.css";
-
 export default {
   components: {
     "card-list-component": CardList,
-    "empty-component": Empty,
-    Loading
+    "empty-component": Empty
   },
   data() {
     return {

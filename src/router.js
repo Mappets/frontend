@@ -51,7 +51,7 @@ export default new Router({
         },
         {
           path: "/organizations/new",
-          name: "organizations",
+          name: "new organization",
           component: () =>
             import(
               /* webpackChunkName: "demo" */ "./views/Organizations/Create.vue"

@@ -74,7 +74,7 @@
                       <div class="col-12">
                         <h3 class="mb-0">
                           <network network="linkedin">
-                            <font-awesome-icon icon="envelope-open" />
+                            <i class="fab fa-linkedin"></i>
                             {{ $t("brands.linkedin") }}
                           </network>
                         </h3>
@@ -91,7 +91,7 @@
                       <div class="col-12">
                         <h3 class="mb-0">
                           <network network="telegram">
-                            <font-awesome-icon icon="envelope-open" />
+                            <i class="fab fa-telegram"></i>
                             {{ $t("brands.telegram") }}
                           </network>
                         </h3>
@@ -109,7 +109,7 @@
                       <div class="col-12">
                         <h3 class="mb-0">
                           <network network="twitter">
-                            <font-awesome-icon icon="envelope-open" />
+                            <i class="fab fa-twitter"></i>
                             {{ $t("brands.twitter") }}
                           </network>
                         </h3>
@@ -126,7 +126,7 @@
                       <div class="col-12">
                         <h3 class="mb-0">
                           <network network="whatsapp">
-                            <font-awesome-icon icon="envelope-open" />
+                            <i class="fab fa-whatsapp"></i>
                             {{ $t("brands.whatsapp") }}
                           </network>
                         </h3>
@@ -143,7 +143,7 @@
                       <div class="col-12">
                         <h3 class="mb-0">
                           <network network="skype">
-                            <font-awesome-icon icon="envelope-open" />
+                            <i class="fab fa-skype"></i>
                             {{ $t("brands.skype") }}
                           </network>
                         </h3>
@@ -160,7 +160,7 @@
                       <div class="col-12">
                         <h3 class="mb-0">
                           <network network="sms">
-                            <font-awesome-icon icon="envelope-open" />
+                            <i class="fas fa-sms"></i>
                             {{ $t("brands.sms") }}
                           </network>
                         </h3>

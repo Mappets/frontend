@@ -1,12 +1,46 @@
 <template>
   <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
-    <side-bar :background-color="sidebarBackground" short-title="Argon" title="Argon">
+    <side-bar
+      :background-color="sidebarBackground"
+      short-title="Argon"
+      title="Argon"
+    >
       <template slot="links">
-        <sidebar-item :link="{name: $t('sidebar.dashboard'), icon: 'ni ni-spaceship text-green', path: '/dashboard' }" />
-        <sidebar-item :link="{name: $t('sidebar.map'), icon: 'ni ni-pin-3 text-green', path: '/map' }" />
-        <sidebar-item :link="{name: $t('sidebar.organizations') , icon: 'ni ni-building text-green', path: '/organizations'}" />
-        <sidebar-item :link="{name: $t('sidebar.pets'), icon: 'ni ni-planet text-green', path: '/pets'}" />
-        <sidebar-item :link="{name: $t('sidebar.users'), icon: 'ni ni-single-02 text-green', path: '/users'}" />
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.dashboard'),
+            icon: 'ni ni-spaceship text-green',
+            path: '/dashboard'
+          }"
+        />
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.map'),
+            icon: 'ni ni-pin-3 text-green',
+            path: '/map'
+          }"
+        />
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.organizations'),
+            icon: 'ni ni-building text-green',
+            path: '/user/organizations'
+          }"
+        />
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.pets'),
+            icon: 'ni ni-planet text-green',
+            path: '/pets'
+          }"
+        />
+        <sidebar-item
+          :link="{
+            name: $t('sidebar.users'),
+            icon: 'ni ni-single-02 text-green',
+            path: '/users'
+          }"
+        />
       </template>
     </side-bar>
     <div class="main-content" :data="sidebarBackground">
@@ -49,5 +83,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

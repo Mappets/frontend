@@ -26,12 +26,15 @@ export default {
   },
   organizations: {
     organizations: "Organizações",
-    myOrganizations: "Minhas organizações"
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    myOrganizations: "Minhas organizações",
+    newOrganization: "Nova organização"
   },
   empty: {
     nothingToSeeHere: "Nada por aqui",
     description: "Nós não encontramos nenhum registro com esse filtro.",
-    goToInitialPage: "Ir para a página inicial"
+    goToInitialPage: "Ir para a página inicial",
+    goToOrganizationsPage: "Ver todas as organizações"
   },
   footer: {
     mappets: "Mappets",
@@ -67,5 +70,9 @@ export default {
     facebook: "Facebook",
     github: "GitHub",
     google: "Google"
+  },
+  validations: {
+    required: "Este campo é obrigatório.",
+    min: "Verifique o valor mínimo necessário."
   }
 };

@@ -8,15 +8,35 @@
       color="#41B883"
     ></loading>
 
-    <base-header class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center">
+    <base-header
+      class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+      style="min-height: 100px; background-image: url(img/theme/profile-cover.jpg); background-size: cover; background-position: center top;"
+    >
+      <!-- Mask -->
       <span class="mask bg-gradient-success opacity-8"></span>
+      <!-- Header container -->
+      <div class="container-fluid d-flex align-items-center">
+        <div class="row" v-if="!organizations.length == 0">
+          <div class="col-lg-12 col-md-12">
+            <h1 class="display-2 text-white">
+              {{ $t("organizations.myOrganizations") }}
+            </h1>
+            <p class="text-white mt-0 mb-5">
+              {{ $t("organizations.description") }}
+            </p>
+            <router-link to="/organizations/new" class="btn btn-info">
+              {{ $t("organizations.newOrganization") }}
+            </router-link>
+          </div>
+        </div>
+      </div>
     </base-header>
 
     <div v-if="organizations.length == 0">
       <empty-component
-        :button-text="$t('empty.goToInitialPage')"
+        :button-text="$t('empty.goToOrganizationsPage')"
         :activeButton="true"
-        urlButton="/dashboard"
+        urlButton="/organizations"
       ></empty-component>
     </div>
     <div class="container-fluid mt--7" v-else>
@@ -42,10 +62,14 @@ import { HTTP } from "../../services/api";
 import { ORGANIZATIONS } from "../../utils/webServices";
 import { OK } from "../../utils/httpStatusCodes";
 
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+
 export default {
   components: {
     "card-list-component": CardList,
-    "empty-component": Empty
+    "empty-component": Empty,
+    Loading
   },
   data() {
     return {
@@ -79,5 +103,8 @@ export default {
 <style scoped>
 .margin-above {
   margin-bottom: 20px;
+}
+.align-right {
+  text-align: right !important;
 }
 </style>

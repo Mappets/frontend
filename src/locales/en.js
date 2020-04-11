@@ -26,12 +26,15 @@ export default {
   },
   organizations: {
     organizations: "Organizations",
-    myOrganizations: "My organizations"
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    myOrganizations: "My organization",
+    newOrganization: "New organization"
   },
   empty: {
     nothingToSeeHere: "Nothing to see here",
     description: "We don't found any data with this filter.",
-    goToInitialPage: "Go to initial page"
+    goToInitialPage: "Go to initial page",
+    goToOrganizationsPage: "View all organizations"
   },
   footer: {
     mappets: "Mappets",
@@ -42,6 +45,34 @@ export default {
     register: "Register",
     login: "Login"
   },
-  login: {},
-  register: {}
+  login: {
+    signInWith: "Sign in with",
+    orSignInWithCredentials: "Or sign in with credentials",
+    rememberMe: "Remember me",
+    signIn: "Sign in",
+    forgotPassword: "Forgot password?",
+    createNewAccount: "Create new account"
+  },
+  register: {
+    signUpWith: "Sign up with",
+    orSignUpWithCredentials: "Or sign up with credentials",
+    iAgreeWithThe: "I agree with the",
+    privacyPolicy: "Privacy Policy",
+    passwordStrength: {
+      passwordStrength: "Password strength: ",
+      strong: "Strong"
+    },
+    createAccount: "Create account",
+    forgotPassword: "Forgot password?",
+    loginIntoYourAccount: "Login into your account"
+  },
+  brands: {
+    facebook: "Facebook",
+    github: "GitHub",
+    google: "Google"
+  },
+  validations: {
+    required: "This field is required.",
+    min: "Verify the minimum value."
+  }
 };

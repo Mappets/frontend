@@ -9,6 +9,8 @@ import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 import Vuelidate from "vuelidate";
 import { BreadstickBakery } from "breadstick";
+import SocialSharing from "vue-social-sharing";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 Vue.config.productionTip = false;
 
@@ -23,8 +25,9 @@ Vue.use(VueGoogleMaps, {
 });
 
 Vue.use(Vuelidate);
-
 Vue.use(BreadstickBakery);
+Vue.use(SocialSharing);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 new Vue({
   i18n,

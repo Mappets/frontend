@@ -70,6 +70,12 @@ export default new Router({
             import(/* webpackChunkName: "demo" */ "./views/Preferences.vue")
         },
         {
+          path: "/share",
+          name: "share",
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Share.vue")
+        },
+        {
           path: "/icons",
           name: "icons",
           component: () =>

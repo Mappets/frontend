@@ -69,7 +69,13 @@ export default {
   brands: {
     facebook: "Facebook",
     github: "GitHub",
-    google: "Google"
+    google: "Google",
+    linkedin: "LinkedIn",
+    telegram: "Telegram",
+    twitter: "Twitter",
+    whatsapp: "WhatsApp",
+    skype: "Skype",
+    sms: "SMS"
   },
   validations: {
     required: "Este campo é obrigatório.",

@@ -34,7 +34,11 @@ export default {
     nothingToSeeHere: "Nothing to see here",
     description: "We don't found any data with this filter.",
     goToInitialPage: "Go to initial page",
-    goToOrganizationsPage: "View all organizations"
+    anotherOption: "Another option",
+    goToOrganizationsPage: "View all organizations",
+    createOrganization: "Create organization",
+    goToPetsPage: "View all pets",
+    createPet: "Create pet"
   },
   footer: {
     mappets: "Mappets",

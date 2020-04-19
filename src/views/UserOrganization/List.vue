@@ -18,15 +18,12 @@
       <div class="container-fluid d-flex align-items-center">
         <div class="row" v-if="!organizations.length == 0">
           <div class="col-lg-12 col-md-12">
-            <h1 class="display-2 text-white">
-              {{ $t("organizations.myOrganizations") }}
-            </h1>
-            <p class="text-white mt-0 mb-5">
-              {{ $t("organizations.description") }}
-            </p>
-            <router-link to="/organizations/new" class="btn btn-info">
-              {{ $t("organizations.newOrganization") }}
-            </router-link>
+            <h1 class="display-2 text-white">{{ $t("organizations.myOrganizations") }}</h1>
+            <p class="text-white mt-0 mb-5">{{ $t("organizations.description") }}</p>
+            <router-link
+              to="/organizations/new"
+              class="btn btn-info"
+            >{{ $t("organizations.newOrganization") }}</router-link>
           </div>
         </div>
       </div>
@@ -35,21 +32,17 @@
     <div v-if="organizations.length == 0">
       <empty-component
         :button-text="$t('empty.goToOrganizationsPage')"
-        :activeButton="true"
-        urlButton="/organizations"
+        :active-button="true"
+        url-button="/organizations"
+        :second-button-text="$t('empty.createOrganization')"
+        :active-second-button="true"
+        url-second-button="/organizations/new"
       ></empty-component>
     </div>
     <div class="container-fluid mt--7" v-else>
       <div class="row">
-        <div
-          class="col-xl-4 order-xl-1 margin-above"
-          v-for="org in organizations"
-          :key="org.id"
-        >
-          <card-list-component
-            :item="org"
-            :show-action-button="true"
-          ></card-list-component>
+        <div class="col-xl-4 order-xl-1 margin-above" v-for="org in organizations" :key="org.id">
+          <card-list-component :item="org" :show-action-button="true"></card-list-component>
         </div>
       </div>
     </div>

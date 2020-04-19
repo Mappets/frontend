@@ -29,8 +29,11 @@
     <div v-if="pets.length == 0">
       <empty-component
         :button-text="$t('empty.goToPetsPage')"
-        :activeButton="true"
-        urlButton="/pets"
+        :active-button="true"
+        url-button="/pets"
+        :second-button-text="$t('empty.createPet')"
+        :active-second-button="true"
+        url-second-button="/pets/new"
       ></empty-component>
     </div>
     <div class="container-fluid mt--7" v-else>

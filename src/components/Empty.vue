@@ -9,11 +9,19 @@
                 <img class="empty-image" src="img/browser.svg" alt="Empty image" />
                 <h1>{{ $t("empty.nothingToSeeHere") }}</h1>
                 <p>{{ $t("empty.description") }}</p>
-                <button
-                  class="btn btn-success"
-                  @click="goToPage"
-                  v-if="activeButton == true"
-                >{{ buttonText }}</button>
+                <div class="col">
+                  <button
+                    class="btn btn-success"
+                    @click="goToPage(urlButton)"
+                    v-if="activeButton"
+                  >{{ buttonText }}</button>
+
+                  <button
+                    class="btn btn-primary"
+                    v-if="activeButton && activeSecondButton"
+                    @click="goToPage(urlSecondButton)"
+                  >{{ secondButtonText }}</button>
+                </div>
               </div>
             </div>
           </div>
@@ -25,11 +33,18 @@
 
 <script>
 export default {
-  props: ["buttonText", "activeButton", "urlButton"],
+  props: [
+    "buttonText",
+    "activeButton",
+    "urlButton",
+    "secondButtonText",
+    "activeSecondButton",
+    "urlSecondButton"
+  ],
   methods: {
-    goToPage() {
-      if (this.urlButton) {
-        location.href = this.urlButton;
+    goToPage(param) {
+      if (param) {
+        location.href = param;
       }
     }
   }

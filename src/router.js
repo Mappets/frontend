@@ -38,7 +38,7 @@ export default new Router({
           name: "user organizations",
           component: () =>
             import(
-              /* webpackChunkName: "demo" */ "./views/UserOrganizations/List.vue"
+              /* webpackChunkName: "demo" */ "./views/UserOrganization/List.vue"
             )
         },
         {
@@ -46,7 +46,7 @@ export default new Router({
           name: "organizations",
           component: () =>
             import(
-              /* webpackChunkName: "demo" */ "./views/Organizations/List.vue"
+              /* webpackChunkName: "demo" */ "./views/Organization/List.vue"
             )
         },
         {
@@ -54,7 +54,7 @@ export default new Router({
           name: "new organization",
           component: () =>
             import(
-              /* webpackChunkName: "demo" */ "./views/Organizations/Create.vue"
+              /* webpackChunkName: "demo" */ "./views/UserOrganization/Create.vue"
             )
         },
         {

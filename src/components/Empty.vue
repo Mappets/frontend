@@ -10,17 +10,16 @@
                 <h1>{{ $t("empty.nothingToSeeHere") }}</h1>
                 <p>{{ $t("empty.description") }}</p>
                 <div class="col">
-                  <button
-                    class="btn btn-success"
-                    @click="goToPage(urlButton)"
-                    v-if="activeButton"
-                  >{{ buttonText }}</button>
+                  <router-link class="navbar-brand" :to="urlButton">
+                    <button class="btn btn-success" v-if="activeButton">{{ buttonText }}</button>
+                  </router-link>
 
-                  <button
-                    class="btn btn-primary"
-                    v-if="activeButton && activeSecondButton"
-                    @click="goToPage(urlSecondButton)"
-                  >{{ secondButtonText }}</button>
+                  <router-link class="navbar-brand" :to="urlSecondButton">
+                    <button
+                      class="btn btn-primary"
+                      v-if="activeButton && activeSecondButton"
+                    >{{ secondButtonText }}</button>
+                  </router-link>
                 </div>
               </div>
             </div>

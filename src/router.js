@@ -34,6 +34,12 @@ export default new Router({
             import(/* webpackChunkName: "demo" */ "./views/UserPet/List.vue")
         },
         {
+          path: "/pets/new",
+          name: "new pet",
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/UserPet/Create.vue")
+        },
+        {
           path: "/user/organizations",
           name: "user organizations",
           component: () =>

@@ -80,5 +80,12 @@ export default {
   validations: {
     required: "Este campo é obrigatório.",
     min: "Verifique o valor mínimo necessário."
+  },
+  userProfile: {
+    userProfileDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    myAccount: "Minha conta",
+    userInformation: "Informações do usuário",
+    contactInformation: "Informações de contato"
   }
 };

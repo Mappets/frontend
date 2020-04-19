@@ -37,7 +37,7 @@
                 :clickable="true"
                 :draggable="true"
                 @click="center = m.position"
-              /> -->
+              />-->
             </GmapMap>
           </div>
         </div>

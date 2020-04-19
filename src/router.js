@@ -31,7 +31,7 @@ export default new Router({
           path: "/pets",
           name: "pets",
           component: () =>
-            import(/* webpackChunkName: "demo" */ "./views/Pets.vue")
+            import(/* webpackChunkName: "demo" */ "./views/UserPet/List.vue")
         },
         {
           path: "/user/organizations",
@@ -61,13 +61,13 @@ export default new Router({
           path: "/users",
           name: "users",
           component: () =>
-            import(/* webpackChunkName: "demo" */ "./views/Users.vue")
+            import(/* webpackChunkName: "demo" */ "./views/User/List.vue")
         },
         {
           path: "/preferences",
           name: "preferences",
           component: () =>
-            import(/* webpackChunkName: "demo" */ "./views/Preferences.vue")
+            import(/* webpackChunkName: "demo" */ "./views/Preference/Edit.vue")
         },
         {
           path: "/share",
@@ -85,13 +85,13 @@ export default new Router({
           path: "/profile",
           name: "profile",
           component: () =>
-            import(/* webpackChunkName: "demo" */ "./views/UserProfile.vue")
+            import(/* webpackChunkName: "demo" */ "./views/User/Edit.vue")
         },
         {
           path: "/map",
           name: "map",
           component: () =>
-            import(/* webpackChunkName: "demo" */ "./views/Map.vue")
+            import(/* webpackChunkName: "demo" */ "./views/Map/Show.vue")
         },
         {
           path: "/tables",

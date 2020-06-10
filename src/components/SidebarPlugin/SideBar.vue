@@ -36,7 +36,10 @@
             <a slot="title" class="nav-link" href="#" role="button">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="img/theme/team-1-800x800.jpg" />
+                  <img
+                    alt="Image placeholder"
+                    src="img/theme/team-1-800x800.jpg"
+                  />
                 </span>
               </div>
             </a>
@@ -82,7 +85,9 @@
               </router-link>
             </div>
             <div class="col-6 collapse-close">
-              <navbar-toggle-button @click.native="closeSidebar"></navbar-toggle-button>
+              <navbar-toggle-button
+                @click.native="closeSidebar"
+              ></navbar-toggle-button>
             </div>
           </div>
         </div>
@@ -93,23 +98,23 @@
         <!--Divider-->
         <hr class="my-3" />
         <!--Heading-->
-        <h6 class="navbar-heading text-muted">{{ $t('sidebar.more') }}</h6>
+        <h6 class="navbar-heading text-muted">{{ $t("sidebar.more") }}</h6>
         <!--Navigation-->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="ni ni-spaceship"></i> {{ $t('sidebar.howItWorks') }}
+              <i class="ni ni-spaceship"></i> {{ $t("sidebar.howItWorks") }}
             </a>
           </li>
           <li class="nav-item">
-              <router-link class="nav-link" to="/preferences">
-              <i class="ni ni-settings"></i> {{ $t('sidebar.preferences') }}
-              </router-link>
+            <router-link class="nav-link" to="/preferences">
+              <i class="ni ni-settings"></i> {{ $t("sidebar.preferences") }}
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ni ni-curved-next"></i> {{ $t('sidebar.share') }}
-            </a>
+            <router-link class="nav-link" to="/share">
+              <i class="ni ni-curved-next"></i> {{ $t("sidebar.share") }}
+            </router-link>
           </li>
         </ul>
       </div>

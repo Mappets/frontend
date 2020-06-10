@@ -19,7 +19,6 @@
             </div>
 
             <language-component></language-component>
-            
           </card>
         </div>
       </div>
@@ -28,11 +27,11 @@
 </template>
 
 <script>
-import Language from '../components/Preferences/Language';
+import Language from "../../components/Preferences/Language";
 
 export default {
   components: {
-    'language-component': Language
+    "language-component": Language
   }
-}
+};
 </script>

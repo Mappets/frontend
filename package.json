@@ -1,5 +1,5 @@
 {
-  "name": "vue-argon-dashboard",
+  "name": "mappets",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,9 +10,14 @@
     "deploy": "aws s3 sync ./dist/ s3://mappets.servehttp.com --profile=mappets"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
+    "animejs": "^3.2.0",
     "axios": "^0.19.2",
     "bootstrap": "4.3.1",
     "bootstrap-vue": "2.0.0-rc.15",
+    "breadstick": "^0.2.14",
     "chart.js": "2.8.0",
     "core-js": "2.6.5",
     "flatpickr": "4.5.7",
@@ -25,7 +30,10 @@
     "vue-i18n": "^8.16.0",
     "vue-loading-overlay": "^3.3.2",
     "vue-router": "3.0.1",
-    "vue2-transitions": "0.3.0"
+    "vue-social-sharing": "^2.4.7",
+    "vue2-google-maps": "^0.10.7",
+    "vue2-transitions": "0.3.0",
+    "vuelidate": "^0.7.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",

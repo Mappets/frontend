@@ -1,32 +1,37 @@
-/*!
+import Vue from "vue";
+import App from "./App.vue";
+import i18n from "@/locales/i18n";
+import router from "./router";
+import "./registerServiceWorker";
+import ArgonDashboard from "./plugins/argon-dashboard";
+import * as VueGoogleMaps from "vue2-google-maps";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+import Vuelidate from "vuelidate";
+import { BreadstickBakery } from "breadstick";
+import SocialSharing from "vue-social-sharing";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-=========================================================
-* Vue Argon Dashboard - v1.0.0
-=========================================================
+Vue.config.productionTip = false;
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+Vue.use(ArgonDashboard);
 
-* Coded by Creative Tim
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "xxx",
+    libraries: "places"
+  },
+  installComponents: true
+});
 
-=========================================================
+Vue.use(Vuelidate);
+Vue.use(BreadstickBakery);
+Vue.use(SocialSharing);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import Vue from 'vue'
-import App from './App.vue'
-import i18n from '@/locales/i18n';
-import router from './router'
-import './registerServiceWorker'
-import ArgonDashboard from './plugins/argon-dashboard'
-
-Vue.config.productionTip = false
-
-Vue.use(ArgonDashboard)
 new Vue({
   i18n,
+  Loading,
   router,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");

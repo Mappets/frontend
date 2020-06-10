@@ -3,7 +3,6 @@
     <loading
       :active.sync="isLoading"
       :can-cancel="false"
-      :on-cancel="onCancel"
       :is-full-page="fullPage"
       loader="bars"
       color="#41B883"
@@ -13,7 +12,14 @@
       <span class="mask bg-gradient-success opacity-8"></span>
     </base-header>
 
-    <div class="container-fluid mt--7" v-if="organizations">
+    <div v-if="organizations.length == 0">
+      <empty-component
+        :button-text="$t('empty.goToInitialPage')"
+        :activeButton="true"
+        urlButton="/dashboard"
+      ></empty-component>
+    </div>
+    <div class="container-fluid mt--7" v-else>
       <div class="row">
         <div
           class="col-xl-4 order-xl-1 margin-above"
@@ -27,9 +33,6 @@
         </div>
       </div>
     </div>
-    <div v-else>
-      <empty-component></empty-component>
-    </div>
   </div>
 </template>
 <script>
@@ -39,14 +42,10 @@ import { HTTP } from "../../services/api";
 import { ORGANIZATIONS } from "../../utils/webServices";
 import { OK } from "../../utils/httpStatusCodes";
 
-import Loading from "vue-loading-overlay";
-import "vue-loading-overlay/dist/vue-loading.css";
-
 export default {
   components: {
     "card-list-component": CardList,
-    "empty-component": Empty,
-    Loading
+    "empty-component": Empty
   },
   data() {
     return {
@@ -56,18 +55,24 @@ export default {
     };
   },
   created() {
-    HTTP.get(ORGANIZATIONS)
-      .then(response => {
-        this.isLoading = false;
-        if (response.status == OK) {
-          this.organizations = response.data;
-        }
-      })
-      .catch(error => {
-        console.log(error.response);
-        console.log(error.response.status);
-        this.errors.push(error);
-      });
+    this.loadOrganizations();
+  },
+  methods: {
+    loadOrganizations() {
+      HTTP.get(ORGANIZATIONS)
+        .then(response => {
+          this.isLoading = false;
+          if (response.status == OK) {
+            this.organizations = response.data;
+          }
+        })
+        .catch(error => {
+          this.isLoading = false;
+          console.log(error.response);
+          console.log(error.response.status);
+          this.errors.push(error);
+        });
+    }
   }
 };
 </script>

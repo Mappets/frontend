@@ -54,7 +54,7 @@
         </div>
 </template>
 <script>
-  import axios from "axios";
+
   export default {
     name: 'login',
     data() {
@@ -65,21 +65,22 @@
         }
       }
     },
+    beforeCreate(){
+      if (this.$session.exists() || this.$session.has('token')){
+        this.$router.push({ name: 'dashboard'});
+      }
+    },
     methods: {
       login () {
-        axios.post(
-          "http://localhost/api-token-auth/",
-            {
-              username: this.model.email,
-              password: this.model.password
-            }
-          )
-          .then((response) => {
-            localStorage.setItem("auth_token", response.data.token);
-          })
-          .catch((error) => {
-            console.log(error);
-          })
+        this.$api.login({"email": this.model.email, "password":this.model.password})
+            .then(response => {
+              this.$session.start();
+              this.$session.set('token', response.data.access);
+              this.$session.set('refresh', response.data.refresh);
+              this.$router.push({ name: 'dashboard'});
+
+            })
+            .catch(error => console.log(error))
       }
     },
   }

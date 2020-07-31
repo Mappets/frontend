@@ -49,7 +49,7 @@ export default new Router({
         },
         {
           path: '/organizations',
-          name: 'organizations',
+          name: 'organizations-list',
           component: () => import(/* webpackChunkName: "demo" */ './views/Organizations/List.vue')
         },
         {

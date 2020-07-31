@@ -31,7 +31,9 @@
               <span>{{ $t('navbarDropdown.myProfile') }}</span>
             </router-link>
             <div class="dropdown-divider"></div>
-            <router-link to="/profile" class="dropdown-item">
+            <router-link to="/" class="dropdown-item"
+                @click.native="logout()"
+                    >
               <i class="ni ni-user-run"></i>
               <span>{{ $t('navbarDropdown.signOut') }}</span>
             </router-link>
@@ -50,7 +52,16 @@ export default {
       searchQuery: ""
     };
   },
+  beforeCreate: function () {
+    if (!this.$session.exists()) {
+      this.$router.push({ name: 'login'});
+    }
+  },
   methods: {
+    logout(){
+      this.$session.destroy();
+       this.$router.push({ name: 'login'});
+    },
     toggleSidebar() {
       this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
     },

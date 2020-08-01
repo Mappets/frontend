@@ -5,7 +5,7 @@
                   containerClasses="px-4 container"
                   expand>
             <router-link slot="brand" class="navbar-brand" to="/">
-                <img src="img/brand/white.png"/>
+                <img src="img/brand/Logo_Branca-8.png" style="width:170px; height:100%;" />
             </router-link>
 
             <template v-slot="{closeMenu}">

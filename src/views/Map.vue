@@ -80,15 +80,15 @@
     mounted() {
       let google= window.google
       let map = document.getElementById('map-canvas');
-      let lat = map.getAttribute('data-lat');
-      let lng = map.getAttribute('data-lng');
+      // let lat = map.getAttribute('data-lat'); passando long e lat manual
+      // let lng = map.getAttribute('data-lng'); passando long e lat manual
 
-      const myLatlng = new google.maps.LatLng(lat, lng);
+      const myLatlng = new google.maps.LatLng('-19.845385', '-44.026386');
       const mapOptions = {
         zoom: 12,
-        scrollwheel: false,
+        scrollwheel: true,
         center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        // mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles: [
           {"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},
           {"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},
@@ -109,8 +109,12 @@
         title: 'Hello World!'
       });
 
-      const contentString = '<div class="info-window-content"><h2>Argon Dashboard</h2>' +
-        '<p>A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</p></div>';
+      const contentString = `<div class="info-window-content">
+            <h2>Alberto</h2>
+            <p>Castrado, 2 anos, macho, marrom, hétero :D!</p>
+            <img src="https://www.petz.com.br/blog/wp-content/uploads/2020/06/animais-com-sindrome-de-down.jpg" style="width:100px; border-radius:50%" />
+            <a href="#">Conheça o Alberto</a>
+        </div>`;
 
       const infowindow = new google.maps.InfoWindow({
         content: contentString

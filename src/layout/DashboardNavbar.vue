@@ -47,20 +47,28 @@
 export default {
   data() {
     return {
-      activeNotifications: false,
+      activeNotifications: true,
       showMenu: false,
       searchQuery: ""
     };
   },
-  beforeCreate: function () {
-    if (!this.$session.exists()) {
-      this.$router.push({ name: 'login'});
-    }
+  beforeCreate(){
+    this.$notifications.notify(
+      [
+        // Fazer notificações: valor apenas message é exigido
+        // { message: 'Notification test', overlap: true, verticalAlign: 'top', horizontalAlign: 'right', type: 'success', timeout: 5000, closeOnClick: true, showClose: true},
+        // { message: 'Notification success', overlap: true, verticalAlign: 'top', horizontalAlign: 'right', type: 'success', timeout: 3000, closeOnClick: true, showClose: true},
+        // { message: 'Notification warning', overlap: false, verticalAlign: 'top', horizontalAlign: 'right', type: 'warning', timeout: 4000, closeOnClick: true, showClose: true},
+        // { message: 'Notification Danger', overlap: false, verticalAlign: 'top', horizontalAlign: 'center', type: 'danger', timeout: 5000, closeOnClick: true, showClose: true},
+        // { message: 'Notification Info', overlap: false, verticalAlign: 'bottom', horizontalAlign: 'center', type: 'info', timeout: 6000, closeOnClick: true, showClose: true}
+      ]
+      );
   },
   methods: {
     logout(){
       this.$session.destroy();
-       this.$router.push({ name: 'login'});
+        this.$notifications.notify([{ message: 'Vamos sentir saudades! <3', type: 'success', timeout: 10000, verticalAlign: 'bottom',  horizontalAlign: 'left', closeOnClick: false, showClose: false}]);
+        this.$router.push({ name: 'login'});
     },
     toggleSidebar() {
       this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);

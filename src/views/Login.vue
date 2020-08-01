@@ -70,6 +70,7 @@
         this.$api.login({"email": this.model.email, "password":this.model.password})
             .then(response => {
               this.$session.start();
+              this.$notifications.notify([{ message: 'Bem-vindo ao Mappets', type: 'success', timeout: 10000, verticalAlign: 'bottom',  horizontalAlign: 'left', closeOnClick: false, showClose: false}]);
               this.$session.set('token', response.data.access);
               this.$session.set('refresh', response.data.refresh);
               console.log(this.$session.getAll());

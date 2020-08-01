@@ -10,7 +10,6 @@ export const HTTP = axios.create({
 
 export default {
   login(payload){
-    //TODO mudar para usar payload e não valores fixos
     return HTTP.post('token/', payload)
   }
 }

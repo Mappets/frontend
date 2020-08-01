@@ -60,14 +60,9 @@
     data() {
       return {
         model: {
-          email: '',
-          password: ''
+          email: 'mateuslnobre@gmail.com', //deixar vazio para, preenchido apenas testes
+          password: '123456789' //deixar vazio para, preenchido apenas testes
         }
-      }
-    },
-    beforeCreate(){
-      if (this.$session.exists() || this.$session.has('token')){
-        this.$router.push({ name: 'dashboard'});
       }
     },
     methods: {
@@ -77,6 +72,7 @@
               this.$session.start();
               this.$session.set('token', response.data.access);
               this.$session.set('refresh', response.data.refresh);
+              console.log(this.$session.getAll());
               this.$router.push({ name: 'dashboard'});
 
             })

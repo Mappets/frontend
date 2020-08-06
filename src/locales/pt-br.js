@@ -5,6 +5,9 @@ export default {
     myProfile: "Perfil",
     signOut: "Sair"
   },
+  layout:{
+    searchPlaceHolder: 'Pesquisar'
+  },
   sidebar: {
     dashboard: "Dashboard",
     map: "Mapa",
@@ -41,5 +44,12 @@ export default {
     rememberMe: "Lembrar",
     usernamePlaceholder: "Usuário",
     passwordPlaceholder: "Senha"
+  },
+  register:{
+    name: "Nome",
+    password: 'Senha',
+    email: 'E-mail',
+    phone: 'Telefone',
+    register: 'Criar Conta',
   }
 };

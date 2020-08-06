@@ -75,7 +75,7 @@
     },
     data() {
       return {
-        toggled: false
+        toggled: true
       };
     },
     methods: {

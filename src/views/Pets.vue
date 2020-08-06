@@ -1,7 +1,7 @@
 <template>
   <div>
     <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
-      <div class="row"></div>
+      <div class="row"></div>asdfasdf
     </base-header>
 
     <div class="container-fluid mt--7">
@@ -15,7 +15,7 @@
               <div class="row icon-examples">
                 <div class="col-lg-12 col-md-12">
                   <p>Blank page</p>
-                  <img src="img/brand/green.png" alt="">
+                  <!-- <img src="img/brand/green.png" alt /> -->
                 </div>
               </div>
             </div>
@@ -27,7 +27,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    this.$api.pets().then(response => {
+      console.log(response);
+    });
+  }
+};
 </script>
 
 <style scoped>

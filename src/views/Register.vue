@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
             <div class="card bg-secondary shadow border-0">
-                <div class="card-header bg-transparent pb-5">
+                <!-- <div class="card-header bg-transparent pb-5">
                     <div class="text-muted text-center mt-2 mb-3">
                         <small>Sign up with</small>
                     </div>
@@ -16,30 +16,36 @@
                             <span class="btn-inner--text">Google</span>
                         </a>
                     </div>
-                </div>
+                </div> -->
                 <div class="card-body px-lg-5 py-lg-5">
                     <div class="text-center text-muted mb-4">
-                        <small>Or sign up with credentials</small>
+                        <small>{{ $t('login.signWithCredentials') }}</small>
                     </div>
                     <form role="form">
 
                         <base-input class="input-group-alternative mb-3"
-                                    placeholder="Name"
+                                    :placeholder="$t('register.name')"
                                     addon-left-icon="ni ni-hat-3"
                                     v-model="model.name">
                         </base-input>
 
                         <base-input class="input-group-alternative mb-3"
-                                    placeholder="Email"
+                                   :placeholder="$t('register.email')"
                                     addon-left-icon="ni ni-email-83"
                                     v-model="model.email">
                         </base-input>
 
                         <base-input class="input-group-alternative"
-                                    placeholder="Password"
+                                    :placeholder="$t('register.password')"
                                     type="password"
                                     addon-left-icon="ni ni-lock-circle-open"
                                     v-model="model.password">
+                        </base-input>
+
+                        <base-input class="input-group-alternative mb-3"
+                                    :placeholder="$t('register.phone', 'Phone')"
+                                    addon-left-icon="ni ni-hat-3"
+                                    v-model="model.phone">
                         </base-input>
 
                         <div class="text-muted font-italic">
@@ -54,7 +60,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <base-button type="primary" class="my-4">Create account</base-button>
+                            <base-button @click="register()" type="primary" class="my-4">{{ $t("register.register") }}</base-button>
                         </div>
                     </form>
                 </div>
@@ -80,10 +86,33 @@
     data() {
       return {
         model: {
-          name: '',
-          email: '',
-          password: ''
+          name: 'Pedrao',
+          email: 'pedrao6@gmail.com',
+          password: '123456789',
+          phone: '123123333'
         }
+      }
+    },
+    methods: {
+      register(){
+        this.$api.register({
+          "name": this.model.name,
+          "email": this.model.email,
+          "password":this.model.password,
+          'phone': this.model.phone
+          })
+          .then(response => {
+            console.log(response);
+            if(response.status == 201){
+              this.$notifications.notify([{ message: response.data.message, type: 'success', timeout: 10000, verticalAlign: 'bottom',  horizontalAlign: 'center', closeOnClick: false, showClose: false}]);
+              setTimeout(function(){
+                this.$router.push({ name: 'login'});
+              },2000);
+            }
+          })
+          .catch(error =>{
+            this.$notifications.notify([{ message: 'Houve algum problema', type: 'warning', timeout: 10000, verticalAlign: 'bottom',  horizontalAlign: 'left', closeOnClick: false, showClose: false}]);
+          });
       }
     }
   }

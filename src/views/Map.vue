@@ -3,7 +3,7 @@
 
         <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
             <!-- Card stats -->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xl-3 col-lg-6">
                     <stats-card title="Total traffic"
                                 type="gradient-red"
@@ -61,14 +61,14 @@
                         </template>
                     </stats-card>
                 </div>
-            </div>
+            </div> -->
         </base-header>
 
         <div class="container-fluid mt--7">
             <div class="row">
                 <div class="col">
                     <div class="card shadow border-0">
-                        <div id="map-canvas" class="map-canvas" data-lat="40.748817" data-lng="-73.985428" style="height: 600px;"></div>
+                        <div id="map-canvas" class="map-canvas" data-lat="-19.845385" data-lng="-44.026386" style="height: 600px;"></div>
                     </div>
                 </div>
             </div>

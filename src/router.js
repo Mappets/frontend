@@ -131,7 +131,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     var session = JSON.parse(localStorage.getItem('vue-session-key'));
-    if (session.token == null) {
+    if (!session) {
       next({
         path: '/login',
         params: {

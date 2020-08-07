@@ -13,7 +13,7 @@
 
 ## Before you start
 
-Please, make sure you have read the project description. If don't, read rigth [clicking here](https://github.com/Mappets/backend/blob/master/README.md).
+Please, make sure you have read the project description. If don't, read rigth [clicking here](https://github.com/Mappets/frontend/blob/master/README.md).
 
 ## Installing
 
@@ -33,7 +33,7 @@ yarn run dev
 
 ## The basics of contributing
 
-A lot of discussions about ideas take place in the [Issues](https://github.com/Mappets/backend/issues) section.
+A lot of discussions about ideas take place in the [Issues](https://github.com/Mappets/frontend/issues) section.
 
 ### The Git basics
 

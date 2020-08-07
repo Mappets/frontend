@@ -81,26 +81,41 @@ export default {
       this.$api
         .login({ email: this.model.email, password: this.model.password })
         .then(response => {
-          this.$session.start();
-          this.$notifications.notify([
-            {
-              message: "Bem-vindo ao Mappets",
-              type: "success",
-              timeout: 10000,
-              verticalAlign: "bottom",
-              horizontalAlign: "left",
-              closeOnClick: false,
-              showClose: false
-            }
-          ]);
-          console.log(`Bearer ${response.data.access}`);
-          this.$api.setHeader(`Bearer ${response.data.access}`);
-          this.$session.set("token", response.data.access);
-          this.$session.set("refresh", response.data.refresh);
-          this.$session.set("user_id", response.data.user);
-          this.$session.set("profile_id", response.data.profile);
-          console.log(this.$session.getAll());
-          this.$router.push({ name: "map" });
+          console.log(response);
+          if (!response) {
+            this.$notifications.notify([
+              {
+                message: "Erro ao acessar, verifique email e senha",
+                type: "warning",
+                timeout: 10000,
+                verticalAlign: "bottom",
+                horizontalAlign: "left",
+                closeOnClick: false,
+                showClose: false
+              }
+            ]);
+          } else {
+            this.$session.start();
+            this.$notifications.notify([
+              {
+                message: "Bem-vindo ao Mappets",
+                type: "success",
+                timeout: 10000,
+                verticalAlign: "bottom",
+                horizontalAlign: "left",
+                closeOnClick: false,
+                showClose: false
+              }
+            ]);
+            console.log(`Bearer ${response.data.access}`);
+            this.$api.setHeader(`Bearer ${response.data.access}`);
+            this.$session.set("token", response.data.access);
+            this.$session.set("refresh", response.data.refresh);
+            this.$session.set("user_id", response.data.user);
+            this.$session.set("profile_id", response.data.profile);
+            console.log(this.$session.getAll());
+            this.$router.push({ name: "map" });
+          }
         })
         .catch(error => console.log(error));
     }

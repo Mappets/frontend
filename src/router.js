@@ -4,18 +4,16 @@ import DashboardLayout from '@/layout/DashboardLayout'
 import AuthLayout from '@/layout/AuthLayout'
 Vue.use(Router)
 
-const router =  new Router({
+const router = new Router({
   linkExactActiveClass: 'active',
-  routes: [
-    {
+  routes: [{
       path: '/',
       redirect: 'login',
       component: AuthLayout,
-      children: [
-        {
+      children: [{
           path: '/login',
           name: 'login',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Login.vue'),
+          component: () => import( /* webpackChunkName: "demo" */ './views/Login.vue'),
           meta: {
             guest: true
           }
@@ -23,7 +21,7 @@ const router =  new Router({
         {
           path: '/register',
           name: 'register',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Register.vue'),
+          component: () => import( /* webpackChunkName: "demo" */ './views/Register.vue'),
           meta: {
             guest: true
           }
@@ -34,14 +32,13 @@ const router =  new Router({
       path: '/darshboard',
       redirect: 'dashboard',
       component: DashboardLayout,
-      children: [
-        {
+      children: [{
           path: '/dashboard',
           name: 'dashboard',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Dashboard.vue'),
+          component: () => import( /* webpackChunkName: "demo" */ './views/Dashboard.vue'),
           meta: {
             requiresAuth: true
           }
@@ -49,7 +46,7 @@ const router =  new Router({
         {
           path: '/blank',
           name: 'blank',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Blank.vue'),
+          component: () => import( /* webpackChunkName: "demo" */ './views/Blank.vue'),
           meta: {
             requiresAuth: true
           }
@@ -57,7 +54,7 @@ const router =  new Router({
         {
           path: '/pets',
           name: 'pets',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Pets.vue'),
+          component: () => import( /* webpackChunkName: "demo" */ './views/Pets.vue'),
           meta: {
             requiresAuth: true
           }
@@ -65,7 +62,7 @@ const router =  new Router({
         {
           path: '/organizations',
           name: 'organizations-list',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Organizations/List.vue'),
+          component: () => import( /* webpackChunkName: "demo" */ './views/Organizations/List.vue'),
           meta: {
             requiresAuth: true
           }
@@ -76,7 +73,7 @@ const router =  new Router({
           meta: {
             requiresAuth: true
           },
-          component: () => import(/* webpackChunkName: "demo" */ './views/Organizations.vue')
+          component: () => import( /* webpackChunkName: "demo" */ './views/Organizations.vue')
         },
         {
           path: '/users',
@@ -84,7 +81,7 @@ const router =  new Router({
           meta: {
             requiresAuth: true
           },
-          component: () => import(/* webpackChunkName: "demo" */ './views/Users.vue')
+          component: () => import( /* webpackChunkName: "demo" */ './views/Users.vue')
         },
         {
           path: '/preferences',
@@ -92,7 +89,7 @@ const router =  new Router({
           meta: {
             requiresAuth: true
           },
-          component: () => import(/* webpackChunkName: "demo" */ './views/Preferences.vue')
+          component: () => import( /* webpackChunkName: "demo" */ './views/Preferences.vue')
         },
         {
           path: '/icons',
@@ -100,7 +97,7 @@ const router =  new Router({
           meta: {
             requiresAuth: true
           },
-          component: () => import(/* webpackChunkName: "demo" */ './views/Icons.vue')
+          component: () => import( /* webpackChunkName: "demo" */ './views/Icons.vue')
         },
         {
           path: '/profile',
@@ -108,7 +105,7 @@ const router =  new Router({
           meta: {
             requiresAuth: true
           },
-          component: () => import(/* webpackChunkName: "demo" */ './views/UserProfile.vue')
+          component: () => import( /* webpackChunkName: "demo" */ './views/UserProfile.vue')
         },
         {
           path: '/map',
@@ -116,7 +113,7 @@ const router =  new Router({
           meta: {
             requiresAuth: true
           },
-          component: () => import(/* webpackChunkName: "demo" */ './views/Map.vue')
+          component: () => import( /* webpackChunkName: "demo" */ './views/Map.vue')
         },
         {
           path: '/tables',
@@ -124,7 +121,7 @@ const router =  new Router({
           meta: {
             requiresAuth: true
           },
-          component: () => import(/* webpackChunkName: "demo" */ './views/Tables.vue')
+          component: () => import( /* webpackChunkName: "demo" */ './views/Tables.vue')
         }
       ]
     }
@@ -132,36 +129,41 @@ const router =  new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requiresAuth)) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
     var session = JSON.parse(localStorage.getItem('vue-session-key'));
     if (session.token == null) {
-        next({
-          path: '/login',
-          params: { nextUrl: to.fullPath }
-        })
+      next({
+        path: '/login',
+        params: {
+          nextUrl: to.fullPath
+        }
+      })
+    } else {
+      // let user = JSON.parse(localStorage.getItem('user'))
+      session.token;
+      if (to.matched.some(record => record.meta.is_admin)) {
+        if (user.is_admin == 1) {
+          next()
+        } else {
+          next({
+            name: 'dashboard'
+          })
+        }
       } else {
-          // let user = JSON.parse(localStorage.getItem('user'))
-          session.token;
-          if(to.matched.some(record => record.meta.is_admin)) {
-            if(user.is_admin == 1){
-              next()
-            }
-            else{
-              next({ name: 'dashboard'})
-              }
-          }else {
-            next()
-          }
-      }
-  }else if(to.matched.some(record => record.meta.guest)) {
-      var session = JSON.parse(localStorage.getItem('vue-session-key'))
-      if(session.token == null){
         next()
-      }else{
-        next({ name: 'dashboard'})
       }
-  }else {
+    }
+  } else if (to.matched.some(record => record.meta.guest)) {
+    var session = JSON.parse(localStorage.getItem('vue-session-key'))
+    if (!session) {
       next()
+    } else {
+      next({
+        name: 'dashboard'
+      })
+    }
+  } else {
+    next()
   }
 });
 export default router;

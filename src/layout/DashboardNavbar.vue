@@ -86,7 +86,8 @@ export default {
   },
   methods: {
     logout() {
-      this.$session.destroy();
+      // this.$session.destroy();
+      localStorage.removeItem("vue-session-key");
       this.$notifications.notify([
         {
           message: "Vamos sentir saudades! <3",

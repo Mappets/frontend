@@ -1,36 +1,19 @@
-/*!
+import Vue from "vue";
+import App from "./App.vue";
+import i18n from "@/locales/i18n";
+import api from "@/services/api.js";
+import router from "./router";
+import "./registerServiceWorker";
+import VueSession from "vue-session";
+import ArgonDashboard from "./plugins/argon-dashboard";
 
-=========================================================
-* Vue Argon Dashboard - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import Vue from 'vue'
-import App from './App.vue'
-import i18n from '@/locales/i18n';
-import api from '@/services/api.js';
-import router from './router'
-import './registerServiceWorker'
-import VueSession from 'vue-session';
-import ArgonDashboard from './plugins/argon-dashboard'
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.prototype.$api = api;
 
-Vue.use(ArgonDashboard)
-Vue.use(VueSession, {persist: true})
+Vue.use(ArgonDashboard);
+Vue.use(VueSession, { persist: true });
 new Vue({
   i18n,
   router,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");
